@@ -37,10 +37,16 @@ Everything lives in a single file, [`VideoPlayer/CompositorRepro.swift`](VideoPl
 Because the compositor is a pass-through, the failure is purely about **having a custom video
 compositor attached to a composition-backed item** — not about any per-frame work.
 
+## Environment
+
+**This reproduces only on Xcode 27.** The same project built with earlier Xcode versions plays
+back correctly — the failure appears specific to the Xcode 27 toolchain / SDK / Simulator runtime.
+
 ## Running
 
 Open `VideoPlayer.xcodeproj`, build the `VideoPlayer` target, run on an iOS Simulator, and tap
 **Reproduce**.
 
+- Requires: **Xcode 27** (does not reproduce on earlier Xcode versions)
 - Deployment target: iOS 17.0
 - No third-party dependencies.
